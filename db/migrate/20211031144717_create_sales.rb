@@ -1,12 +1,10 @@
-class CreateItems < ActiveRecord::Migration[6.1]
+class CreateSales < ActiveRecord::Migration[6.1]
   def change
-    create_table :items do |t|
+    create_table :sales do |t|
       t.string :item
       t.string :vehicle
       t.string :company
       t.float :price
-      t.integer :purchase
-      t.integer :sale
       t.float :total
 
       t.timestamps

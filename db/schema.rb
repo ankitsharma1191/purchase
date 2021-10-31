@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_163011) do
+ActiveRecord::Schema.define(version: 2021_10_31_145513) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -40,18 +40,26 @@ ActiveRecord::Schema.define(version: 2021_10_30_163011) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "buys", charset: "utf8mb4", force: :cascade do |t|
+    t.string "item"
+    t.string "vehicle"
+    t.string "company"
+    t.float "price"
+    t.float "total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "homes", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "items", charset: "utf8mb4", force: :cascade do |t|
+  create_table "sales", charset: "utf8mb4", force: :cascade do |t|
     t.string "item"
     t.string "vehicle"
     t.string "company"
     t.float "price"
-    t.integer "purchase"
-    t.integer "sale"
     t.float "total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
